@@ -1,0 +1,282 @@
+
+1、精彩看点  ========》【新版的资源页面】
+{//用于行业报告、行业资讯、百科以及技术分享页面的新闻列表显示  =========》【资源页面包括分析报告，培训教育，案例应用。客户端发送获取类别，服务器返回相应类型的新闻列表】
+		
+
+	“brtnews”:[
+					{	
+						"newsId":"",                                               //用于标识每条新闻
+						"newstype":"行业报告",===================================》【这里的数据请做相应修改，如分析报告，培训教育】                               
+						"newstitle":"大数据的三大理念解析",
+						"summary":"全球52亿移动用户...",
+						"thumbnail-url":"http://file.apicloud.com/mcm/A6962040598254/5b50fc0c31a6fadce7c2545c84188959.jpg",
+						"newstime":"2014-11-21 09:17",
+					},
+					{
+						"newsId":"",
+						"newstype":"行业资讯",===================================》【这里的数据请做相应修改，如分析报告，培训教育】 
+						"newstitle":"大数据的三大理念解析",
+						"summary":"全球52亿移动用户...",
+						"thumbnail-url":"http://file.apicloud.com/mcm/A6962040598254/5b50fc0c31a6fadce7c2545c84188959.jpg",
+						"newstime":"2014-11-21 09:17",
+					},
+					...
+					
+	]
+
+}
+1.1 精彩看点文章详情============》【资源详情页面】
+{//用于文章详情页面展示     当用户登入后，需要查找该newsId的文章是否被当前uid用户收藏，若未收藏，用户操作收藏按钮后，客户端传该newsId到服务器的news_fav，
+	若已收藏，用户操作取消收藏按钮后，服务器从news_fav中删除该newsId。===================》【新不考虑这些】
+	“newsdetail”:
+					{
+						"newsId":"",
+						"uid":"",                           //用户未登入不需要该字段，用户登入后，用于判断该用户是否已收藏本条新闻   =======》【删除该字段】
+						"news_fav":"5412a9463c1c6e1b1a77f8e8",  //用户未登入不需要该字段，用户登入后，用于判断该用户是否已收藏本条新闻  =======》【删除该字段】
+						"newstitle":"大数据的三大理念解析",
+						"author":"胡琪",
+						"summary":"全球52亿移动用户...",
+						"content":"维克托·迈尔·舍恩伯格同学曾在他的作品《大数据时代》中总结了相对于传统的思维模式，大数据时代需要做出的三个转变，",
+						"thumbnail-url":"http://file.apicloud.com/mcm/A6962040598254/5b50fc0c31a6fadce7c2545c84188959.jpg",
+						"news-url":"",                                                    //该newsId新闻对应的url，用于微信分享。
+						"newstime":"2014-11-21 09:17",
+					}
+					
+}
+2、热点
+2.1 签到领金币
+{
+	"coin":{
+				"uid":"",                                  //用户的uid，用于标识该用户
+				"isSignIn":"true/false",                   //用于判断用户当天是否已签到,用户签到后，客户端传true到服务器，服务器根据日期重置该值。
+				"coinnum":"500",                           //用户金币数，客户端在用户签到时先获取该值，签到后传回新的值到服务器。
+	}
+}
+2.2 banner展示
+{//用于banner展示
+	"banner":[
+					{
+						"bannerId":""                       //用于标识banner部分的每个图片
+						"pic-name":"pic1",
+						"pic-url":"http://file.apicloud.com/mcm/A6962040598254/5b50fc0c31a6fadce7c2545c84188959.jpg"
+						"uid":"",                                                       ============================》【删除该字段】
+						"news_fav":"5412a9463c1c6e1b1a77f8e8,54104df8249f812006c5c1e7",   ==========================》【删除该字段】
+						"newstitle":"",
+						"author":"",
+						"summary":"全球52亿移动用户...",
+						"content":"",
+						"news-url":"",                                                    //该newsId新闻对应的url，用于微信分享。
+						"newstime":"2014-11-21 09:17",
+						
+					}
+	
+	]	
+}
+2.3 热点新闻列表============================》【新版的汛潮页面】
+{//服务器返回新闻列表 用于汛潮页面列表显示
+	“hotnews”:[
+					{
+						"newsId":"",
+						"newstitle":"大数据的三大理念解析",        
+						"hotnewstype":"用户提问",           ===================================》【这里的数据请做相应修改，如头条，专栏，活动】 
+						"summary":"全球52亿移动用户...",
+						"thumbnail-url":"http://file.apicloud.com/mcm/A6962040598254/5b50fc0c31a6fadce7c2545c84188959.jpg",
+						"newstime":"2014-11-21 09:17",
+					},
+					{
+						"newsId":"",
+						"newstitle":"大数据的三大理念解析",
+						"hotnewstype":"文库博览",          ===================================》【这里的数据请做相应修改，如头条，专栏，活动】 
+						"summary":"全球52亿移动用户...",
+						"thumbnail-url":"",
+						"newstime":"2014-11-21 09:17",
+					},
+					...
+					
+	]
+
+}
+2.4 热点新闻详情
+{//用于文章详情页面展示     当用户登入后，需要查找该newsId的文章是否被当前uid用户收藏，若未收藏，用户操作收藏按钮后，客户端传该newsId到服务器的news_fav，
+	若已收藏，用户操作取消收藏按钮后，服务器从news_fav中删除该newsId。=================>【先不考虑这个】
+	“newsdetail”:
+					{
+						"newsId":"",
+						"uid":"",                                                         ============================》【删除该字段】
+						"news_fav":"5412a9463c1c6e1b1a77f8e8,54104df8249f812006c5c1e7",   ============================》【删除该字段】
+						"newstitle":"大数据的三大理念解析",
+						"author":"胡琪",
+						"summary":"全球52亿移动用户...",
+						"content":"维克托·迈尔·舍恩伯格同学曾在他的作品《大数据时代》中总结了相对于传统的思维模式，大数据时代需要做出的三个转变，",
+						"thumbnail-url":"http://file.apicloud.com/mcm/A6962040598254/5b50fc0c31a6fadce7c2545c84188959.jpg",
+						"news-url":"",                                                    //该newsId新闻对应的url，用于微信分享。
+						"newstime":"2014-11-21 09:17",
+					}
+					
+}
+
+
+2.5 搜索
+{//用于搜索页面展示    客户端传用户输入的字段到服务器，服务器返回查找到的结果
+	“searchresult”:[
+					{
+						"newsId":"",
+						"newstitle":"大数据的三大理念解析",
+						"summary":"全球52亿移动用户...",
+						"newstype":"文库博览",
+						"thumbnail-url":"http://file.apicloud.com/mcm/A6962040598254/5b50fc0c31a6fadce7c2545c84188959.jpg",
+						"newstime":"2014-11-21 09:17",
+					},
+					{
+						"newsId":"",
+						"newstitle":"大数据的三大理念解析",
+						"summary":"全球52亿移动用户...",
+						"newstype":"文库博览",
+						"thumbnail-url":"http://file.apicloud.com/mcm/A6962040598254/5b50fc0c31a6fadce7c2545c84188959.jpg",
+						"newstime":"2014-11-21 09:17",
+					},
+					...
+	]				
+}
+
+3、我的收藏
+{//服务器返回当前uid用户的收藏内容  用于我的收藏页面展示 ，
+	"fav":[
+			  		{
+						"newsId":"",
+						"newstitle":"大数据的三大理念解析",
+						"summary":"全球52亿移动用户...",
+						"newstype":"文库博览",
+						"thumbnail-url":"http://file.apicloud.com/mcm/A6962040598254/5b50fc0c31a6fadce7c2545c84188959.jpg",
+						"newstime":"2014-11-21 09:17",
+					},
+					{
+						"newsId":"",
+						"newstitle":"大数据的三大理念解析",
+						"summary":"全球52亿移动用户...",
+						"newstype":"文库博览",
+						"thumbnail-url":"http://file.apicloud.com/mcm/A6962040598254/5b50fc0c31a6fadce7c2545c84188959.jpg",
+						"newstime":"2014-11-21 09:17",
+					},
+					...
+	
+	]
+
+}
+4 分享
+4.1微信分享
+{
+	"shareweixin":{
+						"newsId":"",
+						"newstitle":"大数据的三大理念解析",
+						"summary":"全球52亿移动用户...",
+						"news-url":"",                                          //该newsId新闻对应的url
+		}
+}
+4.2新浪微博分享
+{
+	"shareweixin":{
+						"newsId":"",
+						"newstitle":"大数据的三大理念解析",
+						"summary":"全球52亿移动用户...",
+						"news-url":"",                                          //该newsId新闻对应的url
+						"thumbnail-url":"http://file.apicloud.com/mcm/A6962040598254/5b50fc0c31a6fadce7c2545c84188959.jpg",
+		}
+}
+
+
+用户相关
+	1.1	注册接口
+			传入用户名密码，返回avator,nick
+	
+	1.2	登录接口
+			传入用户名密码，返回所有
+			
+	1.3	修改用户信息接口
+			传入修改的键值对，修改数据库
+			
+	1.4	问答消息(以下接口都传入用户id作为标识)
+			返回与我相关的问答消息（eg.谁回答了我，我回答了谁），需要问题的id，点击可查询到问题详情
+			
+	1.5	我的提问
+			返回由我发起的提问列表，需要问题的id，点击可查询到问题详情
+			
+	1.6	我的回答
+			返回我回答过的问题列表，需要问题的id，点击可查询到问题详情
+			
+	1.7	我的收藏
+			返回我的收藏列表，需要问题的id，点击可查询到问题详情
+			
+	1.8	问答详情
+			根据上面返回的问题id，查询对应问题的详情，包括评论
+			
+	1.9	我的任务
+			暂无
+
+
+	1.10:用户数据表(user)
+		{
+			"news_fav":"54104df8249f812006c5c1e7,5412aafb3c1c6e1b1a77f810",						//收藏新闻id，以","隔开
+			"msgnum":3,																																//未读消息
+			"avator":"/storage/emulated/0/UZMap/A6962040598254/picture/p-23e59e4.jpg",//头像
+			"nick":"突突突",																													//昵称
+			"coin":1008,																															//金币
+			"question_fav":"54939a618fbf84ed69b428da,5493ac7511153af2694605c1",				//收藏问答id
+			"createdAt":"2014-12-16T07:15:42.072Z",																		//创建时间
+			"updatedAt":"2014-12-27T12:34:02.776Z",																		//更新时间
+			"id":"548fdc1e72c60e937d21c8f7",																					//用户id
+			"username":"1234",																												//用户名
+			"pwd":""																																	//密码
+		} 
+	
+	1.11：问答表(questions)
+		{
+		    "id": "5493ac7511153af2694605c1",																										//问题id
+		    "author": "sara",																																		//作者
+		    "author_avator": "/storage/emulated/0/UZMap/A6962040598254/picture/p-6e1865d4.jpg", //作者头像
+		    "reply_count": 5,																																		//回复数目
+		    "subject": "如何实现DIV居中？",																											//主题
+		    "createdAt": "2014-12-19T12:41:25.700+0800",																				//创建时间
+		    "updatedAt": "2014-12-24T10:57:31.291+0800",																				//更新时间
+		    "author_id": "548fdc1e72c60e937d21c8f7",																						//作者id
+		    "subject_img": "http://img.zdnet.com.cn/2/404/liNnGzRJDmJo6.jpg",										//问题中的图片
+		    "comment": [																																				//评论列表	
+		        {
+		            "id": "5493ac7511153af2694605c1",
+		            "author": "小范",
+		            "author_avator": "/storage/emulated/0/UZMap/A6962040598254/picture/p-6e1865d4.jpg",
+		            "reply_count": 5,
+		            "subject": "如何实现DIV居中？",
+		            "createdAt": "2014-12-19T12: 41: 25.700+0800",
+		            "updatedAt": "2014-12-24T10: 57: 31.291+0800",
+		            "author_id": "548fdc1e72c60e937d21c8f7",
+		            "subject_img": "http: //img.zdnet.com.cn/2/404/liNnGzRJDmJo6.jpg",
+		            "comment": [
+		                "",
+		                "",
+		                ""
+		            ]
+		        },
+		        {
+		            "id": "5493ac7511153af2694605c1",
+		            "author": "小范",
+		            "author_avator": "/storage/emulated/0/UZMap/A6962040598254/picture/p-6e1865d4.jpg",
+		            "reply_count": 5,
+		            "subject": "如何实现DIV居中？",
+		            "createdAt": "2014-12-19T12: 41: 25.700+0800",
+		            "updatedAt": "2014-12-24T10: 57: 31.291+0800",
+		            "author_id": "548fdc1e72c60e937d21c8f7",
+		            "subject_img": "http: //img.zdnet.com.cn/2/404/liNnGzRJDmJo6.jpg",
+		            "comment": [
+		                "",
+		                "",
+		                ""
+		            ]
+		        }
+		    ]
+		}
+
+
+
+
+
